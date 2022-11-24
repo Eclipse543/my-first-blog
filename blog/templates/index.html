@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+
+{% block header %}
+
+<header>
+  <!-- primary header start  -->
+    <section class="header">
+      <a class="about" href>About</a>
+      <a class="contact" href>Contact</a>
+      <a class="help" href>Help</a>
+      <a class="faqs" href>FAQs</a>	
+        <select name="account" id="account">
+          <option selected disabled>My Account</option>
+          <option value="sign in">Sign in</option>
+          <option value="sign up">Sign up</option>
+        </select>
+        <select name="currency" id="currency">
+          <option value="dollar">USD</option>
+          <option value="pound">EUR</option>
+          <option value="gbp">GBP</option>
+          <option value="canada">CAD</option>
+        </select>
+        <select name="language" id="language">
+          <option value="english">EN</option>
+          <option value="france">FR</option>
+          <option value="australia">AR</option>
+          <option value="russia">RU</option>
+        </select>
+    </section>
+    <!-- primary header end -->
+
+    <!-- secondary header start -->
+    <section class="header2">
+      <article class="row1">
+        <article class="multi" >MULTI</article>
+        <article class="shop" >SHOP</article>
+      	<form class="input" >
+          <input type="text" class="search" placeholder="Search for products">
+        </form>
+        <div class="srch-icon">
+          <span class="search-icon">
+            <i class="fa fa-search" ></i>
+          </span>
+        </div>
+        <article class="phone">
+          <article class="no">Customer Service</article>
+          <article class="num">+012 345 6789</article>
+        </article>
+      </article>
+    </section>
+    <!--secondary header end-->
+  </header>
+
+{% endblock header %}
+
+{% block nav %}
+
+<nav>
+  <section class="nav" >
+    <article class="row2" >
+    <article class="row4">
+    <select name="categories" id="categories">
+      <option selected disabled >Categories</option>
+        <option value="france">FR</option>
+        <option value="australia">AR</option>
+        <option value="russia">RU</option>
+    </select>
+    </article>
+    </article>
+    <article class="row3" >
+      <div class="navbar">
+        <a href="index.html" class="nav-item1">Home</a>
+        <a href="shop.html" class="nav-item1">Shop</a>
+        <a href="detail.html" class="nav-item1">Shop Detail</a>
+        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Pages 
+          <i class="fa fa-angle-down mt-1"></i>
+        </a>
+        <a href="contact.html" class="nav-item nav-link">Contact</a>
+      </div>
+    </article>
+  </section>
+</nav>
+{% endblock nav %}
+
+{% block carousel %}
+<article class="look" >
+  <img src="img/carousel-1.jpg" alt="">
+  <img src="img/carousel-2.jpg" alt="">
+  <img src="img/carousel-3.jpg" alt="">
+</article>
+{% endblock carousel %}
