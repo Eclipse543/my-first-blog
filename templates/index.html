@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+
+{% block table %}
+  <div class='row'>
+    <div class="col-md-12">
+	{% if messages %}
+	<ul class="messages">
+    	    {% for message in messages %}
+    	    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}
+    	    </li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
+  </div>
+    <div class="row">
+    <div class="col-md-4">
+      <form action="" method="post" enctype="multipart/form-data" >
+        {% csrf_token %}
+        <div class="form-group mb-2">
+          <label for="name">Name</label>
+          <input type="text" name="name" required id="name" class="form-control" >
+        </div>
+        <div class="form-group mb-2">
+          <label for="email">Email</label> <br>
+          <input type="text" name="email" required id="email" class="form-control">
+        </div>
+        <div class="form-group mb-2">
+          <label for="phone">Phone</label> <br>
+          <input type="text" name="phone" required id="phone" class="form-control" >
+        </div>
+        <div class="form-group mb-2">
+          <label for="gender">Gender</label> <br>
+          <label ><input type="radio" name="gender" value="male">Male</label>
+          <label ><input type="radio" name="gender" value="female">Female</label>
+        </div>
+        <div class="form-group mb-2">
+          <label for="language">Language</label> <br>
+          <label ><input type="checkbox" name="language" value="nepali">Nepali</label>
+          <label ><input type="checkbox" name="language" value="english">English</label>
+          <label ><input type="checkbox" name="language" value="chinese">Chinese</label>
+        </div>
+        <div class="form-group mb-2">
+          <label for="country">Country</label>
+          <select name="country" id="country" class="form-control" >
+            <option value="" readonly selected >---Select Country---</option>
+            <option value="nepal">Nepal</option>
+            <option value="china">China</option>
+            <option value="india">India</option>
+          </select>
+        </div>
+        <div class="form-group mb-2">
+          <label for="image">Image</label>
+          <input type="file" name="image" id="image" class="form-control">
+        </div>
+        <div class="form-group mb-2">
+          <button type="submit" class="btn btn-primary" ><i class="bi bi-bag-plus-fill"> Add record </i></button>
+        </div
+      </form>
+    </div>
+    <div class="col-md-8">
+      <table class="table table-hover" >
+        <thead>
+          <tr>
+            <th>S.n</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Gender</th>
+            <th>Language</th>
+            <th>Country</th>
+            <th>Image</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        {% for student in studentsData %}
+        <tbody width="10%" >
+          <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ student.name }}</td>
+            <td>{{ student.email }}</td>
+            <td>{{ student.gender }}</td>
+            <td>{{ student.language }}</td>
+            <td>{{ student.country }}</td>
+            <td>
+              {% if student.image %}
+              <img src="{{ student.image.url }}" alt="" width="60">
+              {% endif %}
+            </td>
+            <td width="15%" >
+              <a href=""class="btn btn-success btn-sm ">
+                <i class="bi bi-pencil-square"></i>
+              </a>
+              <a href=""class="btn btn-danger btn-sm ">
+                <i class="bi bi-trash"></i>
+              </a>
+            </td>
+          </tr>
+        </tbody>
+        {% endfor %}
+      </table>
+    </div>
+  </div>
+{% endblock table %}
+

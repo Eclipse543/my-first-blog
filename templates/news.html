@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>news</title>
+</head>
+<body>
+  <form action="" method="post">
+    {% csrf_token %}
+    <label for="title">Title</label> <br>
+    <input type="text" name="title" required id="title"> <br><br>
+    <label for="description"  height="100px" >Description</label><br>
+    <textarea name="description" id="description" cols="40" rows="10"></textarea><br><br>
+    <label for="published_date">Published Date</label><br>
+    <input type="text" name="published_date" required id="published_date"><br><br>
+    <button>Enter</button>
+  </form>
+</body>
+</html>
