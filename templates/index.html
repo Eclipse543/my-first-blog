@@ -3,14 +3,14 @@
 {% block table %}
   <div class='row'>
     <div class="col-md-12">
-	{% if messages %}
-	<ul class="messages">
+	    {% if messages %}
+	      <ul class="messages">
     	    {% for message in messages %}
-    	    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}
-    	    </li>
-            {% endfor %}
+    	      <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}
+    	      </li>
+          {% endfor %}
         </ul>
-        {% endif %}
+      {% endif %}
     </div>
   </div>
     <div class="row">
@@ -72,8 +72,8 @@
             <th>Action</th>
           </tr>
         </thead>
+        <tbody>
         {% for student in studentsData %}
-        <tbody width="10%" >
           <tr>
             <td>{{ forloop.counter }}</td>
             <td>{{ student.name }}</td>
@@ -95,8 +95,8 @@
               </a>
             </td>
           </tr>
-        </tbody>
         {% endfor %}
+        </tbody>
       </table>
     </div>
   </div>
