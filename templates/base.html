@@ -7,16 +7,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
-    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" />
     <link rel="stylesheet" href="{% static "bootstrap-icons-1.10.2/bootstrap-icons.css" %}">
   </head>
   <body>
-    <div class="container" >
-    {% comment %} <img src="{% static 'carousel-1.jpg' %}" alt="" /> {% endcomment %}
-    <h1>Add records</h1>
-    {% block table%}
-    {% endblock table %}
+    <div class="container">
+      <h1>Add records</h1>
+      {% block table%} {% endblock table %} {% block header %} {% endblock header %}
     </div>
-  </body>i
+  </body>
 </html>
-

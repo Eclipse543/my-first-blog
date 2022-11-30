@@ -38,9 +38,12 @@ class Student(models.Model):
     language = models.CharField(choices=language_field, max_length=100,null=True)
     country = models.CharField(choices=country_field, max_length=100,null=True)
     image = models.ImageField(upload_to='students/', blank=True, null=True)
-    
+
     def __str__(self):
         return self.name
+
+    def get_language(self):
+        return self.language.split(",")
 
 class New(models.Model):
     title = models.CharField(max_length=100, null=True)
